@@ -2,8 +2,8 @@ import { Download } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="flex flex-col md:flex-row items-center gap-[32px] md:gap-[60px] px-[20px] md:px-[120px] py-[40px] md:py-[80px] bg-[var(--agency-white)]">
-      <div className="flex flex-col gap-[24px] flex-1">
+    <section className="flex flex-col lg:flex-row items-center gap-[32px] md:gap-[60px] px-[20px] md:px-[120px] py-[40px] md:py-[80px] bg-[var(--agency-white)]">
+      <div className="flex flex-col gap-[24px] lg:w-1/2 xl:w-7/12">
         <h1 className="text-[32px] md:text-[48px] font-bold leading-[1.2] text-[var(--agency-heading)]">
           IT Solutions That Empower Your Business Growth
         </h1>
@@ -31,7 +31,7 @@ export default function Hero() {
       <img
         src="/images/Hero Image.webp"
         alt="AI technology and human interaction"
-        className="w-full md:w-[560px] h-[280px] md:h-[440px] object-cover rounded-[8px]"
+        className="w-full lg:w-1/2 xl:w-5/12 h-[280px] md:h-[440px] object-cover rounded-[8px]"
       />
     </section>
   );
