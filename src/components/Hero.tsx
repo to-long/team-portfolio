@@ -29,9 +29,9 @@ export default function Hero() {
         </div>
       </div>
       <img
-        src="/images/Hero Image.webp"
+        src="/images/hero-image-01.webp"
         alt="AI technology and human interaction"
-        className="w-full lg:w-1/2 xl:w-5/12 h-[280px] md:h-[440px] object-cover rounded-[8px]"
+        className="w-full lg:w-1/2 xl:w-5/12 h-auto max-h-[440px] object-contain rounded-[8px]"
       />
     </section>
   );
