@@ -12,20 +12,22 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="flex flex-col">
+    <>
       <Header />
-      <Hero />
-      <About />
-      <Services />
-      <Cases />
-      <Team />
-      <Divider />
-      <Testimonials />
-      <Divider />
-      <Blog />
-      <Divider />
-      <Contact />
+      <div className="flex flex-col max-w-[1200px] mx-auto w-full">
+        <Hero />
+        <About />
+        <Services />
+        <Cases />
+        <Team />
+        <Divider />
+        <Testimonials />
+        <Divider />
+        <Blog />
+        <Divider />
+        <Contact />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

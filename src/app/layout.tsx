@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Talentify - IT Solutions That Empower Your Business Growth",
+  title: "Talentifies - IT Solutions That Empower Your Business Growth",
   description:
-    "Talentify delivers end-to-end IT services — from custom website and mobile app development to connecting you with top-tier tech talent.",
+    "Talentifies delivers end-to-end IT services — from custom website and mobile app development to connecting you with top-tier tech talent.",
 };
 
 export default function RootLayout({

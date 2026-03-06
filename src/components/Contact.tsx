@@ -2,7 +2,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col items-center gap-[32px] px-[24px] sm:px-[40px] md:px-[300px] py-[40px] md:py-[80px] bg-[var(--agency-white)]"
+      className="flex flex-col items-center gap-[32px] px-[24px] sm:px-[40px] md:px-[120px] lg:px-[300px] py-[40px] md:py-[80px] bg-[var(--agency-white)]"
     >
       <div className="flex flex-col items-center gap-[12px] w-full">
         <span className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]">

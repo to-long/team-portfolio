@@ -8,7 +8,7 @@ export default function Hero() {
           IT Solutions That Empower Your Business Growth
         </h1>
         <p className="text-[15px] md:text-[16px] leading-[1.7] text-[var(--agency-body)]">
-          Talentify delivers end-to-end IT services — from custom website and
+          Talentifies delivers end-to-end IT services — from custom website and
           mobile app development to connecting you with top-tier tech talent. We
           help businesses scale with reliable, modern technology solutions.
         </p>

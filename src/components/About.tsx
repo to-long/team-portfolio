@@ -16,7 +16,7 @@ export default function About() {
           Technology partner you can trust
         </h2>
         <p className="text-[15px] md:text-[16px] leading-[1.7] text-[var(--agency-body)]">
-          At Talentify, we combine deep technical expertise with a passion for
+          At Talentifies, we combine deep technical expertise with a passion for
           innovation to help businesses thrive in the digital era. From building
           custom web and mobile solutions to providing skilled IT professionals,
           we&apos;re your all-in-one technology partner.

@@ -15,7 +15,7 @@ const testimonials = [
   },
   {
     quote:
-      "\u201CTalentify provided us with an incredible dev team that integrated seamlessly. They delivered our mobile app ahead of schedule with outstanding quality.\u201D",
+      "\u201CTalentifies provided us with an incredible dev team that integrated seamlessly. They delivered our mobile app ahead of schedule with outstanding quality.\u201D",
     avatar: "/images/avatar-emily.jpg",
     name: "Emily Rodriguez",
     company: "CTO, ScaleUp Inc",
