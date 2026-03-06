@@ -1,0 +1,38 @@
+import { Download } from "lucide-react";
+
+export default function Hero() {
+  return (
+    <section className="flex items-center gap-[60px] px-[120px] py-[80px] bg-[var(--agency-white)]">
+      <div className="flex flex-col gap-[24px] flex-1">
+        <h1 className="text-[48px] font-bold leading-[1.2] text-[var(--agency-heading)]">
+          IT Solutions That Empower Your Business Growth
+        </h1>
+        <p className="text-[16px] leading-[1.7] text-[var(--agency-body)]">
+          Talentify delivers end-to-end IT services — from custom website and
+          mobile app development to connecting you with top-tier tech talent. We
+          help businesses scale with reliable, modern technology solutions.
+        </p>
+        <div className="flex items-center gap-[16px]">
+          <a
+            href="#services"
+            className="flex items-center justify-center rounded-[4px] bg-[var(--agency-blue)] px-[32px] py-[14px] text-[16px] font-semibold text-white"
+          >
+            Our Services
+          </a>
+          <a
+            href="#contact"
+            className="flex items-center justify-center gap-[8px] px-[24px] py-[14px] text-[16px] font-medium text-[var(--agency-blue)]"
+          >
+            <Download className="w-[18px] h-[18px]" />
+            Get a Free Consultation
+          </a>
+        </div>
+      </div>
+      <img
+        src="/images/Hero Image.webp"
+        alt="AI technology and human interaction"
+        className="w-[560px] h-[440px] object-cover rounded-[8px]"
+      />
+    </section>
+  );
+}
