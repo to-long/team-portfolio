@@ -2,12 +2,12 @@ const navLinks = ["About", "Services", "Team", "Blog"];
 
 export default function Header() {
   return (
-    <header className="flex items-center justify-between px-[120px] h-[80px] bg-[var(--agency-white)] border-b border-[var(--agency-border)]">
-      <span className="text-[24px] font-bold text-[var(--agency-heading)]">
+    <header className="flex items-center justify-between px-[20px] md:px-[120px] h-[60px] md:h-[80px] bg-[var(--agency-white)] border-b border-[var(--agency-border)]">
+      <span className="text-[20px] md:text-[24px] font-bold text-[var(--agency-heading)]">
         Talentify
       </span>
 
-      <nav className="flex items-center gap-[32px] h-full">
+      <nav className="hidden md:flex items-center gap-[32px] h-full">
         {navLinks.map((l) => (
           <a
             key={l}
@@ -21,7 +21,7 @@ export default function Header() {
 
       <a
         href="#contact"
-        className="flex items-center justify-center rounded-[4px] bg-[var(--agency-blue)] px-[28px] py-[12px] text-[14px] font-semibold text-white"
+        className="flex items-center justify-center rounded-[4px] bg-[var(--agency-blue)] px-[20px] md:px-[28px] py-[10px] md:py-[12px] text-[13px] md:text-[14px] font-semibold text-white"
       >
         Contact Us
       </a>

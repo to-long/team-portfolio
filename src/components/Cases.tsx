@@ -31,13 +31,13 @@ function CaseCard({ c }: { c: (typeof cases)[number] }) {
       <img
         src={c.image}
         alt={c.title}
-        className="w-full h-[240px] object-cover"
+        className="w-full h-[200px] md:h-[240px] object-cover"
       />
-      <div className="flex flex-col gap-[8px] p-[24px]">
+      <div className="flex flex-col gap-[8px] p-[20px] md:p-[24px]">
         <span className="text-[12px] font-semibold text-[var(--agency-blue)]">
           {c.tag}
         </span>
-        <h3 className="text-[20px] font-semibold text-[var(--agency-heading)]">
+        <h3 className="text-[18px] md:text-[20px] font-semibold text-[var(--agency-heading)]">
           {c.title}
         </h3>
         <p className="text-[14px] leading-[1.7] text-[var(--agency-body)]">
@@ -50,29 +50,22 @@ function CaseCard({ c }: { c: (typeof cases)[number] }) {
 
 export default function Cases() {
   return (
-    <section className="flex flex-col items-center gap-[48px] px-[120px] py-[80px] bg-[var(--agency-blue-light)]">
+    <section className="flex flex-col items-center gap-[32px] md:gap-[48px] px-[20px] md:px-[120px] py-[40px] md:py-[80px] bg-[var(--agency-blue-light)]">
       <div className="flex flex-col items-center gap-[12px] max-w-[600px]">
         <span className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]">
           PROJECT CASES
         </span>
-        <h2 className="text-[36px] font-bold text-[var(--agency-heading)] text-center">
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
           Our Recent Work
         </h2>
-        <p className="text-[16px] text-[var(--agency-body)] text-center">
+        <p className="text-[15px] md:text-[16px] text-[var(--agency-body)] text-center">
           Explore how we&apos;ve helped businesses transform with technology
         </p>
       </div>
-      <div className="flex flex-col gap-[32px] w-full">
-        <div className="flex gap-[32px]">
-          {cases.slice(0, 2).map((c) => (
-            <CaseCard key={c.title} c={c} />
-          ))}
-        </div>
-        <div className="flex gap-[32px]">
-          {cases.slice(2).map((c) => (
-            <CaseCard key={c.title} c={c} />
-          ))}
-        </div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-[24px] md:gap-[32px] w-full">
+        {cases.map((c) => (
+          <CaseCard key={c.title} c={c} />
+        ))}
       </div>
     </section>
   );
