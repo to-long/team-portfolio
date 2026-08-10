@@ -82,7 +82,19 @@ export default function SplitHeading({
   );
 
   return (
-    <Tag ref={ref} className={className}>
+    /*
+     * `key={text}` is what makes switching language work.
+     *
+     * SplitText replaces this element's text node with its own nested divs, so
+     * React's virtual tree no longer matches the real DOM. On a locale change
+     * React tries to patch a text node that is no longer there, the update is
+     * lost, and the heading keeps the previous language — while the surrounding
+     * copy, which React still owns, updates normally.
+     *
+     * Keying on the text unmounts the element and mounts a fresh one, so React
+     * never has to reconcile against DOM that SplitText mutated.
+     */
+    <Tag key={text} ref={ref} className={className}>
       {text}
     </Tag>
   );
