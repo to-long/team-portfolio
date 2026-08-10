@@ -79,6 +79,8 @@ export default function Cases() {
             className="flex flex-col flex-1 rounded-[8px] overflow-hidden border border-[var(--agency-border)] bg-[var(--agency-white)]"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={caseImages[i]}
               alt={c.title}
               className="w-full h-[200px] md:h-[240px] object-cover"

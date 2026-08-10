@@ -76,7 +76,10 @@ export default function Article({ index }: { index: number }) {
       />
 
       <figure data-article-hero className="flex flex-col gap-[8px]">
+        {/* LCP element for this page: load it eagerly and hint the priority. */}
         <img
+          fetchPriority="high"
+          decoding="async"
           src={meta.image}
           alt=""
           className="w-full aspect-[16/9] object-cover rounded-[8px]"

@@ -23,7 +23,7 @@ const COMMONS = "https://commons.wikimedia.org/wiki/File:";
 export const POSTS: PostMeta[] = [
   {
     slug: "big-tech-ai-capex",
-    image: "/images/blog-ai-capex.jpg",
+    image: "/images/blog-ai-capex.webp",
     credit: {
       author: "Rsparks3",
       license: "CC0",
@@ -32,7 +32,7 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "custom-silicon-land-grab",
-    image: "/images/blog-ai-silicon.jpg",
+    image: "/images/blog-ai-silicon.webp",
     credit: {
       author: "Windell Oskay",
       license: "CC BY 2.0",
@@ -41,7 +41,7 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "china-frontier-price-war",
-    image: "/images/blog-ai-china.jpg",
+    image: "/images/blog-ai-china.webp",
     credit: {
       author: "Larry Qian",
       license: "CC0",
@@ -50,7 +50,7 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "ai-compliance-season",
-    image: "/images/blog-ai-rules.jpg",
+    image: "/images/blog-ai-rules.webp",
     credit: {
       author: "inyucho",
       license: "CC BY 2.0",
@@ -59,7 +59,7 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "frontier-talent-war",
-    image: "/images/blog-ai-talent.jpg",
+    image: "/images/blog-ai-talent.webp",
     credit: {
       author: "Arunvrparavur",
       license: "CC BY-SA 4.0",
@@ -68,7 +68,7 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "agents-testing-limits",
-    image: "/images/blog-ai-agents.jpg",
+    image: "/images/blog-ai-agents.webp",
     credit: {
       author: "Auledas",
       license: "CC BY-SA 4.0",

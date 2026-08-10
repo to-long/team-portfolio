@@ -15,10 +15,10 @@ import SplitHeading from "./animations/SplitHeading";
 
 // Index-matched to `testimonials.items` in translations.ts.
 const people = [
-  { avatar: "/images/avatar-brenda.jpg", name: "Brenda Bijen" },
-  { avatar: "/images/avatar-herbert.jpg", name: "Herbert Friese" },
-  { avatar: "/images/avatar-akofa.jpg", name: "Akofa Wallace" },
-  { avatar: "/images/avatar-halley.jpg", name: "Halley Dang" },
+  { avatar: "/images/avatar-brenda.webp", name: "Brenda Bijen" },
+  { avatar: "/images/avatar-herbert.webp", name: "Herbert Friese" },
+  { avatar: "/images/avatar-akofa.webp", name: "Akofa Wallace" },
+  { avatar: "/images/avatar-halley.webp", name: "Halley Dang" },
 ];
 
 export default function Testimonials() {
@@ -123,6 +123,8 @@ export default function Testimonials() {
               </p>
               <div className="mt-auto flex items-center gap-[12px]">
                 <img
+                  loading="lazy"
+                  decoding="async"
                   src={people[i].avatar}
                   alt={people[i].name}
                   className="w-[48px] h-[48px] rounded-full object-cover"

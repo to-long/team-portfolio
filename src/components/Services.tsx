@@ -13,8 +13,8 @@ import {
 
 // Index-matched to `services.items` in translations.ts.
 const serviceImages = [
-  "/images/service-website.jpg",
-  "/images/service-mobile.jpg",
+  "/images/service-website.webp",
+  "/images/service-mobile.webp",
   "/images/service-ai.webp",
 ];
 
@@ -69,6 +69,8 @@ export default function Services() {
             className="flex flex-col rounded-[8px] overflow-hidden bg-[var(--agency-white)]"
           >
             <img
+              loading="lazy"
+              decoding="async"
               src={serviceImages[i]}
               alt={s.title}
               className="w-full h-[200px] md:h-[220px] object-cover"

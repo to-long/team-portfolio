@@ -14,12 +14,12 @@ import SplitHeading from "./animations/SplitHeading";
 
 // Order matches `team.roles` in translations.ts — keep the two in sync.
 const team = [
-  { image: "/images/team-brian.jpg", name: "Brian To" },
-  { image: "/images/team-ken.jpg", name: "Ken Nguyen" },
-  { image: "/images/team-steven.jpg", name: "Steven Nguyen" },
-  { image: "/images/team-truong.jpg", name: "Tony Nguyen" },
-  { image: "/images/team-quanganh.jpg", name: "Andy Nguyen" },
-  { image: "/images/team-thuy.jpg", name: "May Le" },
+  { image: "/images/team-brian.webp", name: "Brian To" },
+  { image: "/images/team-ken.webp", name: "Ken Nguyen" },
+  { image: "/images/team-steven.webp", name: "Steven Nguyen" },
+  { image: "/images/team-truong.webp", name: "Tony Nguyen" },
+  { image: "/images/team-quanganh.webp", name: "Andy Nguyen" },
+  { image: "/images/team-thuy.webp", name: "May Le" },
 ];
 
 export default function Team() {
@@ -94,6 +94,8 @@ export default function Team() {
                 one landscape shot needs to stay horizontally centred. */}
             <div className="w-full aspect-[4/3] overflow-hidden rounded-[8px]">
               <img
+                loading="lazy"
+                decoding="async"
                 src={m.image}
                 alt={m.name}
                 className="w-full h-full object-cover object-top"

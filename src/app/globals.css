@@ -88,7 +88,8 @@ section[id] {
   }
 
   .font-primary {
-    font-family: "Inter", sans-serif;
+    /* --font-inter is set by next/font in layout.tsx */
+    font-family: var(--font-inter), system-ui, sans-serif;
   }
 }
 

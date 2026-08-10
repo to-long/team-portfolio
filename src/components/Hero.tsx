@@ -98,10 +98,18 @@ export default function Hero() {
           </a>
         </div>
       </div>
+      {/* The page's LCP element: eager, prioritised, and the only image with
+          intrinsic dimensions in the markup — its height is `auto`, so without
+          them the layout shifts once the file arrives. Every other image on the
+          site has its box fixed in CSS. */}
       <img
         data-hero-image
         src="/images/hero-image-01.webp"
         alt={t.imageAlt}
+        width={491}
+        height={515}
+        fetchPriority="high"
+        decoding="async"
         className="w-full lg:w-1/2 xl:w-5/12 h-auto max-h-[440px] object-contain rounded-[8px]"
       />
     </section>
