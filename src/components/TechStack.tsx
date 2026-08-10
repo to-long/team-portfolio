@@ -32,12 +32,6 @@ export default function TechStack() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-tech-eyebrow]"),
-        slideFrom("left", 24),
-        { ...slideTo(), duration: 0.6, scrollTrigger: enterTrigger(el, "top 84%") },
-      );
-
       // One stagger across every chip, so the whole cloud fills in as a single
       // left-to-right sweep rather than three separate group reveals.
       gsap.fromTo(
@@ -61,7 +55,6 @@ export default function TechStack() {
     >
       <div className="flex flex-col items-center gap-[12px] max-w-[560px]">
         <span
-          data-tech-eyebrow
           className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
         >
           {t.eyebrow}

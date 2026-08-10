@@ -8,8 +8,6 @@ import {
   enterTrigger,
   gsap,
   prefersReducedMotion,
-  slideFrom,
-  slideTo,
   useGSAP,
 } from "@/lib/gsap";
 
@@ -64,12 +62,6 @@ export default function Testimonials() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-intro]"),
-        slideFrom("left"),
-        { ...slideTo(), scrollTrigger: enterTrigger(el, "top 84%") },
-      );
-
       // Blur/fade rather than a slide: animating x on cards that live inside a
       // horizontal scroller would fight the scroll position.
       gsap.fromTo(
@@ -95,7 +87,6 @@ export default function Testimonials() {
     >
       <div className="flex flex-col items-center gap-[12px] max-w-[500px]">
         <span
-          data-intro
           className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
         >
           {t.eyebrow}

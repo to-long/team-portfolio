@@ -6,8 +6,6 @@ import {
   enterTrigger,
   gsap,
   prefersReducedMotion,
-  slideFrom,
-  slideTo,
   useGSAP,
 } from "@/lib/gsap";
 
@@ -53,12 +51,6 @@ export default function TrustBar() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-trust-label]"),
-        slideFrom("left", 24),
-        { ...slideTo(), duration: 0.6, scrollTrigger: enterTrigger(el, "top 90%") },
-      );
-
       // The track fades in rather than sliding: it already has a CSS transform
       // animation running, and a second one on the same axis would fight it.
       gsap.fromTo(
@@ -82,7 +74,6 @@ export default function TrustBar() {
       className="flex flex-col items-center gap-[20px] md:gap-[28px] py-[32px] md:py-[48px] bg-[var(--agency-white)] border-y border-[var(--agency-border)]"
     >
       <span
-        data-trust-label
         className="text-[12px] md:text-[13px] font-semibold tracking-[2px] text-[var(--agency-body)]"
       >
         {t.label}

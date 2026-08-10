@@ -77,10 +77,7 @@ export default function About() {
       {/* Capped width while the second column is hidden — a single flex child
           would otherwise stretch the paragraphs to an unreadable line length. */}
       <div className="flex flex-col gap-[20px] flex-1 md:max-w-[760px]">
-        <span
-          data-left
-          className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
-        >
+        <span className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]">
           {t.eyebrow}
         </span>
         <h2 className="text-[28px] md:text-[36px] font-bold leading-[1.3] text-[var(--agency-heading)]">

@@ -33,12 +33,6 @@ export default function Team() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-intro]"),
-        slideFrom("left"),
-        { ...slideTo(), scrollTrigger: enterTrigger(el, "top 84%") },
-      );
-
       // Six cards in rows of three. Staggering across the whole set reads as a
       // single sweep left-to-right rather than three separate row reveals.
       gsap.fromTo(
@@ -69,7 +63,6 @@ export default function Team() {
     >
       <div className="flex flex-col items-center gap-[12px] max-w-[500px]">
         <span
-          data-intro
           className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
         >
           {t.eyebrow}

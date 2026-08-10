@@ -25,12 +25,6 @@ export default function Contact() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-intro]"),
-        slideFrom("left"),
-        { ...slideTo(), scrollTrigger: enterTrigger(el, "top 84%") },
-      );
-
       // Side-by-side pairs, so each field enters from its own side and the
       // two halves close together.
       q("[data-field]").forEach((field, i) => {
@@ -68,7 +62,6 @@ export default function Contact() {
     >
       <div className="flex flex-col items-center gap-[12px] w-full">
         <span
-          data-intro
           className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
         >
           {t.eyebrow}

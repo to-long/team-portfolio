@@ -25,12 +25,6 @@ export default function Blog() {
 
       const q = gsap.utils.selector(el);
 
-      gsap.fromTo(
-        q("[data-intro]"),
-        slideFrom("left"),
-        { ...slideTo(), scrollTrigger: enterTrigger(el, "top 84%") },
-      );
-
       // From the left here — Testimonials just came in from the right, so
       // alternating keeps consecutive card sections from feeling identical.
       gsap.fromTo(
@@ -55,7 +49,6 @@ export default function Blog() {
     >
       <div className="flex flex-col items-center gap-[12px] max-w-[500px]">
         <span
-          data-intro
           className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
         >
           {t.eyebrow}

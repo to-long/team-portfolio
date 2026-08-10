@@ -55,10 +55,7 @@ export default function Cases() {
       className="flex flex-col items-center gap-[32px] md:gap-[48px] px-[20px] md:px-[120px] py-[40px] md:py-[80px] bg-[var(--agency-blue-light)]"
     >
       <div className="flex flex-col items-center gap-[12px] max-w-[600px]">
-        <span
-          data-intro
-          className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]"
-        >
+        <span className="text-[14px] font-semibold tracking-[2px] text-[var(--agency-blue)]">
           {t.eyebrow}
         </span>
         <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
