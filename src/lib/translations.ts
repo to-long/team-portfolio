@@ -85,6 +85,11 @@ const en = {
         title: "Dutch & Co — Solar & LED in Ghana",
         desc: "A public website and an ordering system for Dutch & Co's solar and lighting product lines. They supply turnkey PV and LED across Ghana — over 21,000 kWp installed and roughly 17,800 tonnes of CO₂ avoided a year.",
       },
+      {
+        tag: "Social Platform",
+        title: "YBOX — Youth Network in Vietnam",
+        desc: "We built the whole platform behind YBOX and have run it for over a decade. Founded in 2013, it is Vietnam's largest online student community for opportunities — jobs, internships, scholarships, competitions and events — and ranks among the country's most-visited sites.",
+      },
     ],
   },
   team: {
@@ -104,6 +109,8 @@ const en = {
   testimonials: {
     eyebrow: "TESTIMONIALS",
     heading: "What Our Clients Say",
+    prev: "Previous testimonial",
+    next: "Next testimonial",
     // DRAFT COPY — both people are real and identifiable. Replace each quote
     // with their own words, in writing, before this goes live.
     items: [
@@ -121,6 +128,11 @@ const en = {
         quote:
           "“Payments leave no room for approximation — a transfer either reconciles or it does not. Teamotion treated our payment layer with exactly that seriousness, across multiple currencies.”",
         company: "SwiftPay — Abuja, Nigeria",
+      },
+      {
+        quote:
+          "“Teamotion has built and run YBOX for more than ten years. Handing a platform that a generation of Vietnamese students depends on to an outside team takes trust, and they have earned it every year since.”",
+        company: "YBOX — Vietnam",
       },
     ],
   },
@@ -296,6 +308,11 @@ const ja: Dictionary = {
         title: "Dutch & Co — ガーナの太陽光とLED",
         desc: "Dutch & Co の太陽光・照明製品向けに、コーポレートサイトと受注システムを構築しました。同社はガーナ全土にターンキー型のPVとLEDを提供し、導入容量は21,000kWp超、年間のCO₂削減量は約17,800トンに達します。",
       },
+      {
+        tag: "ソーシャルプラットフォーム",
+        title: "YBOX — ベトナムの若者向けネットワーク",
+        desc: "YBOX の基盤をゼロから構築し、10年以上にわたり運用してきました。2013年創設、求人・インターン・奨学金・コンテスト・イベントといった機会を扱うベトナム最大の学生オンラインコミュニティで、国内でも上位のアクセス数を持つサイトです。",
+      },
     ],
   },
   team: {
@@ -314,6 +331,8 @@ const ja: Dictionary = {
   testimonials: {
     eyebrow: "お客様の声",
     heading: "お客様からの評価",
+    prev: "前のお客様の声",
+    next: "次のお客様の声",
     items: [
       {
         quote:
@@ -329,6 +348,11 @@ const ja: Dictionary = {
         quote:
           "「決済に曖昧さの余地はありません。送金は照合が合うか、合わないかのどちらかです。Teamotion は複数通貨にまたがる当社の決済レイヤーを、まさにその厳しさで扱ってくれました。」",
         company: "SwiftPay — ナイジェリア・アブジャ",
+      },
+      {
+        quote:
+          "「Teamotion は10年以上にわたり YBOX を構築し、運用し続けてくれています。ベトナムの学生世代が頼るプラットフォームを外部チームに委ねるには信頼が必要ですが、彼らは毎年それに応えてきました。」",
+        company: "YBOX — ベトナム",
       },
     ],
   },

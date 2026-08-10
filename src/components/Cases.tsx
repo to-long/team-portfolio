@@ -17,6 +17,7 @@ const caseImages = [
   "/images/case-impactcocoa.svg",
   "/images/case-swiftpay.svg",
   "/images/case-dutchandco.svg",
+  "/images/case-ybox.svg",
 ];
 
 export default function Cases() {

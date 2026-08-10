@@ -96,6 +96,18 @@ body {
   background: var(--agency-bg);
   color: var(--agency-body);
   transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+/* Reveal animations park elements at a positive translateX until they play,
+   pushing them past the right edge and creating a horizontal scrollbar.
+   Clipping each section contains that without touching the root scroll
+   container, so `position: sticky` on the header keeps working — and `clip`
+   rather than `hidden` means no section becomes a scroll container either.
+   The testimonials slider still scrolls: its own overflow-x lives inside. */
+section,
+footer {
+  overflow-x: clip;
 }
 
 /* Circular reveal when toggling theme, centred on the toggle button. */

@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "@/lib/i18n";
 import {
   enterTrigger,
@@ -17,11 +18,44 @@ const people = [
   { avatar: "/images/avatar-brenda.jpg", name: "Brenda Bijen" },
   { avatar: "/images/avatar-herbert.jpg", name: "Herbert Friese" },
   { avatar: "/images/avatar-akofa.jpg", name: "Akofa Wallace" },
+  { avatar: "/images/avatar-halley.jpg", name: "Halley Dang" },
 ];
 
 export default function Testimonials() {
   const t = useTranslations("testimonials");
   const root = useRef<HTMLElement>(null);
+  const track = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  // Native scroll-snap does the sliding; the arrows only nudge scrollLeft, so
+  // swipe, trackpad, keyboard and buttons all drive the same one mechanism.
+  const syncEdges = useCallback(() => {
+    const el = track.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 1);
+    setAtEnd(el.scrollLeft >= el.scrollWidth - el.clientWidth - 1);
+  }, []);
+
+  useEffect(() => {
+    syncEdges();
+    const el = track.current;
+    if (!el) return;
+    el.addEventListener("scroll", syncEdges, { passive: true });
+    window.addEventListener("resize", syncEdges);
+    return () => {
+      el.removeEventListener("scroll", syncEdges);
+      window.removeEventListener("resize", syncEdges);
+    };
+  }, [syncEdges, t.items.length]);
+
+  const nudge = (direction: 1 | -1) => {
+    const el = track.current;
+    if (!el) return;
+    const card = el.querySelector<HTMLElement>("[data-quote-card]");
+    const step = card ? card.offsetWidth + 20 : el.clientWidth * 0.8;
+    el.scrollBy({ left: step * direction, behavior: "smooth" });
+  };
 
   useGSAP(
     () => {
@@ -36,27 +70,17 @@ export default function Testimonials() {
         { ...slideTo(), scrollTrigger: enterTrigger(el, "top 84%") },
       );
 
-      // Quotes trail in from the right, then the avatar row of each card
-      // follows a beat later so the attribution lands after the words.
+      // Blur/fade rather than a slide: animating x on cards that live inside a
+      // horizontal scroller would fight the scroll position.
       gsap.fromTo(
         q("[data-quote-card]"),
-        slideFrom("right", 44),
+        { opacity: 0, filter: "blur(8px)" },
         {
-          ...slideTo(),
-          duration: 0.75,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.7,
+          ease: "power3.out",
           stagger: 0.09,
-          scrollTrigger: enterTrigger(el, "top 80%"),
-        },
-      );
-
-      gsap.fromTo(
-        q("[data-quote-author]"),
-        slideFrom("right", 18),
-        {
-          ...slideTo(),
-          duration: 0.6,
-          stagger: 0.09,
-          delay: 0.2,
           scrollTrigger: enterTrigger(el, "top 80%"),
         },
       );
@@ -82,37 +106,60 @@ export default function Testimonials() {
           className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
         />
       </div>
-      {/* No `items-start` — grid items must keep the default `stretch` so
-          every card is as tall as the tallest one in its row. */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[20px] md:gap-[32px] w-full">
-        {t.items.map((item, i) => (
-          <div
-            key={people[i].name}
-            data-quote-card
-            className="flex flex-col gap-[20px] rounded-[8px] border border-[var(--agency-border)] p-[24px] md:p-[32px]"
-          >
-            <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--agency-body)]">
-              {item.quote}
-            </p>
-            {/* mt-auto pins the attribution to the bottom of the card, so the
-                avatars line up across a row even when quotes differ in length. */}
-            <div data-quote-author className="mt-auto flex items-center gap-[12px]">
-              <img
-                src={people[i].avatar}
-                alt={people[i].name}
-                className="w-[48px] h-[48px] rounded-full object-cover"
-              />
-              <div className="flex flex-col gap-[2px]">
-                <span className="text-[14px] font-semibold text-[var(--agency-heading)]">
-                  {people[i].name}
-                </span>
-                <span className="text-[13px] text-[var(--agency-body)]">
-                  {item.company}
-                </span>
+
+      <div className="relative w-full">
+        <div
+          ref={track}
+          className="flex gap-[20px] md:gap-[32px] overflow-x-auto snap-x snap-mandatory scroll-smooth [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+        >
+          {t.items.map((item, i) => (
+            <div
+              key={people[i].name}
+              data-quote-card
+              className="flex shrink-0 basis-[86%] sm:basis-[calc((100%-20px)/2)] lg:basis-[calc((100%-64px)/3)] snap-start flex-col gap-[20px] rounded-[8px] border border-[var(--agency-border)] bg-[var(--agency-white)] p-[24px] md:p-[32px]"
+            >
+              <p className="text-[14px] md:text-[15px] leading-[1.7] text-[var(--agency-body)]">
+                {item.quote}
+              </p>
+              <div className="mt-auto flex items-center gap-[12px]">
+                <img
+                  src={people[i].avatar}
+                  alt={people[i].name}
+                  className="w-[48px] h-[48px] rounded-full object-cover"
+                />
+                <div className="flex flex-col gap-[2px]">
+                  <span className="text-[14px] font-semibold text-[var(--agency-heading)]">
+                    {people[i].name}
+                  </span>
+                  <span className="text-[13px] text-[var(--agency-body)]">
+                    {item.company}
+                  </span>
+                </div>
               </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Desktop affordance only — on touch, swiping is the obvious gesture
+            and the buttons would just sit on top of a card. */}
+        <button
+          type="button"
+          onClick={() => nudge(-1)}
+          disabled={atStart}
+          aria-label={t.prev}
+          className="hidden md:flex absolute left-[-18px] top-1/2 -translate-y-1/2 items-center justify-center w-[40px] h-[40px] rounded-full border border-[var(--agency-border)] bg-[var(--agency-white)] text-[var(--agency-heading)] shadow-sm transition-opacity disabled:opacity-0"
+        >
+          <ChevronLeft className="w-[18px] h-[18px]" />
+        </button>
+        <button
+          type="button"
+          onClick={() => nudge(1)}
+          disabled={atEnd}
+          aria-label={t.next}
+          className="hidden md:flex absolute right-[-18px] top-1/2 -translate-y-1/2 items-center justify-center w-[40px] h-[40px] rounded-full border border-[var(--agency-border)] bg-[var(--agency-white)] text-[var(--agency-heading)] shadow-sm transition-opacity disabled:opacity-0"
+        >
+          <ChevronRight className="w-[18px] h-[18px]" />
+        </button>
       </div>
     </section>
   );
