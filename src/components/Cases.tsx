@@ -15,8 +15,8 @@ import SplitHeading from "./animations/SplitHeading";
 // Index-matched to `cases.items` in translations.ts.
 const caseImages = [
   "/images/case-impactcocoa.svg",
-  "/images/case-dutchandco.svg",
   "/images/case-swiftpay.svg",
+  "/images/case-dutchandco.svg",
 ];
 
 export default function Cases() {

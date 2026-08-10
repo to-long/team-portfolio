@@ -76,14 +76,14 @@ const en = {
         desc: "A multi-tenant platform following cocoa from farmer registration through inspection, purchase and evacuation, producing the EUDR due-diligence trail that European and New Zealand buyers require. Field data syncs from Kobo Toolbox; parcel boundaries live in PostGIS.",
       },
       {
-        tag: "Web & Ordering System",
-        title: "Dutch & Co — Solar & LED in Ghana",
-        desc: "A public website and an ordering system for Dutch & Co's solar and lighting product lines. They supply turnkey PV and LED across Ghana — over 21,000 kWp installed and roughly 17,800 tonnes of CO₂ avoided a year.",
-      },
-      {
         tag: "Payments",
         title: "SwiftPay — Payment Layer",
         desc: "We built the payment side of SwiftPay, a multi-currency fintech platform out of Abuja: QR-code payments, virtual cards in naira and dollars, transfers and FX, plus group and interest-bearing savings wallets.",
+      },
+      {
+        tag: "Web & Ordering System",
+        title: "Dutch & Co — Solar & LED in Ghana",
+        desc: "A public website and an ordering system for Dutch & Co's solar and lighting product lines. They supply turnkey PV and LED across Ghana — over 21,000 kWp installed and roughly 17,800 tonnes of CO₂ avoided a year.",
       },
     ],
   },
@@ -287,14 +287,14 @@ const ja: Dictionary = {
         desc: "生産者登録から検査・買付・搬出までカカオの流れを追跡するマルチテナント基盤。欧州およびニュージーランドのバイヤーが求める EUDR デューデリジェンスの証跡を生成します。現場データは Kobo Toolbox から同期し、区画の境界情報は PostGIS で管理しています。",
       },
       {
-        tag: "Web・受注システム",
-        title: "Dutch & Co — ガーナの太陽光とLED",
-        desc: "Dutch & Co の太陽光・照明製品向けに、コーポレートサイトと受注システムを構築しました。同社はガーナ全土にターンキー型のPVとLEDを提供し、導入容量は21,000kWp超、年間のCO₂削減量は約17,800トンに達します。",
-      },
-      {
         tag: "決済",
         title: "SwiftPay — 決済レイヤー",
         desc: "アブジャ拠点のマルチ通貨フィンテック基盤 SwiftPay の決済部分を担当しました。QRコード決済、ナイラ／ドル建てのバーチャルカード、送金と為替、さらにグループ貯蓄・利息付きウォレットまで対応しています。",
+      },
+      {
+        tag: "Web・受注システム",
+        title: "Dutch & Co — ガーナの太陽光とLED",
+        desc: "Dutch & Co の太陽光・照明製品向けに、コーポレートサイトと受注システムを構築しました。同社はガーナ全土にターンキー型のPVとLEDを提供し、導入容量は21,000kWp超、年間のCO₂削減量は約17,800トンに達します。",
       },
     ],
   },
