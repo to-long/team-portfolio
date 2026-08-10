@@ -75,12 +75,28 @@ export default function Article({ index }: { index: number }) {
         className="text-[28px] md:text-[40px] font-bold leading-[1.25] text-[var(--agency-heading)]"
       />
 
-      <img
-        data-article-hero
-        src={meta.image}
-        alt=""
-        className="w-full aspect-[16/9] object-cover rounded-[8px]"
-      />
+      <figure data-article-hero className="flex flex-col gap-[8px]">
+        <img
+          src={meta.image}
+          alt=""
+          className="w-full aspect-[16/9] object-cover rounded-[8px]"
+        />
+        {/* CC BY and CC BY-SA oblige us to name the author and the licence.
+            Rendered for every post so the credit line is uniform, including
+            the CC0 images that do not strictly require it. */}
+        <figcaption className="text-[12px] text-[var(--agency-body)]">
+          {"Photo: "}
+          <a
+            href={meta.credit.source}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline hover:text-[var(--agency-blue)]"
+          >
+            {meta.credit.author}
+          </a>
+          {` · ${meta.credit.license} · Wikimedia Commons`}
+        </figcaption>
+      </figure>
 
       <div className="flex flex-col gap-[20px]">
         {post.body.map((paragraph, i) => (
