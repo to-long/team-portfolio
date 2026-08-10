@@ -78,6 +78,10 @@ export default function Cases() {
             data-case-card
             className="flex flex-col flex-1 rounded-[8px] overflow-hidden border border-[var(--agency-border)] bg-[var(--agency-white)]"
           >
+            {/* Plain <img>, not next/image: these four are hand-written SVGs of
+                2-3KB. Next refuses to run SVG through the optimiser without
+                `dangerouslyAllowSVG`, and there is nothing to gain by enabling
+                it for files this small. */}
             <img
               loading="lazy"
               decoding="async"

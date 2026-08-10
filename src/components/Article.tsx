@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useTranslations } from "@/lib/i18n";
@@ -76,14 +77,18 @@ export default function Article({ index }: { index: number }) {
       />
 
       <figure data-article-hero className="flex flex-col gap-[8px]">
-        {/* LCP element for this page: load it eagerly and hint the priority. */}
-        <img
-          fetchPriority="high"
-          decoding="async"
-          src={meta.image}
-          alt=""
-          className="w-full aspect-[16/9] object-cover rounded-[8px]"
-        />
+        {/* LCP element for this page, so it is preloaded rather than lazy. */}
+        <div className="relative w-full aspect-[16/9] overflow-hidden rounded-[8px]">
+          <Image
+            src={meta.image}
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 820px) 820px, 100vw"
+            quality={62}
+            className="object-cover"
+          />
+        </div>
         {/* CC BY and CC BY-SA oblige us to name the author and the licence.
             Rendered for every post so the credit line is uniform, including
             the CC0 images that do not strictly require it. */}

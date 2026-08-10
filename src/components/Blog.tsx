@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
 import { useTranslations } from "@/lib/i18n";
@@ -76,13 +77,16 @@ export default function Blog() {
             data-post
             className="group flex flex-col rounded-[8px] overflow-hidden bg-[var(--agency-white)] border border-[var(--agency-border)] lg:border-0 transition-shadow hover:shadow-[0_18px_36px_-18px_rgba(9,14,52,0.35)]"
           >
-            <img
-              loading="lazy"
-              decoding="async"
-              src={POSTS[i].image}
-              alt={p.title}
-              className="w-full h-[200px] object-cover"
-            />
+            <div className="relative w-full h-[200px]">
+              <Image
+                src={POSTS[i].image}
+                alt={p.title}
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                quality={62}
+                className="object-cover"
+              />
+            </div>
             <div className="flex flex-col gap-[12px] p-[20px] md:p-[24px]">
               <h3 className="text-[17px] md:text-[18px] font-semibold leading-[1.4] text-[var(--agency-heading)]">
                 {p.title}

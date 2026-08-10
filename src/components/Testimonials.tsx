@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslations } from "@/lib/i18n";
@@ -122,11 +123,11 @@ export default function Testimonials() {
                 {item.quote}
               </p>
               <div className="mt-auto flex items-center gap-[12px]">
-                <img
-                  loading="lazy"
-                  decoding="async"
+                <Image
                   src={people[i].avatar}
                   alt={people[i].name}
+                  width={48}
+                  height={48}
                   className="w-[48px] h-[48px] rounded-full object-cover"
                 />
                 <div className="flex flex-col gap-[2px]">

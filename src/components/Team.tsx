@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef } from "react";
 import { useTranslations } from "@/lib/i18n";
 import {
@@ -92,13 +93,13 @@ export default function Team() {
             {/* object-top, not object-left-top: the square portraits crop only
                 vertically so horizontal anchoring is moot for them, while the
                 one landscape shot needs to stay horizontally centred. */}
-            <div className="w-full aspect-[4/3] overflow-hidden rounded-[8px]">
-              <img
-                loading="lazy"
-                decoding="async"
+            <div className="relative w-full aspect-[4/3] overflow-hidden rounded-[8px]">
+              <Image
                 src={m.image}
                 alt={m.name}
-                className="w-full h-full object-cover object-top"
+                fill
+                sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                className="object-cover object-top"
               />
             </div>
             <div className="flex flex-col items-center gap-[4px] pt-[16px]">

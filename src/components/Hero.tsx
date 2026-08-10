@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { Download } from "lucide-react";
 import { useRef } from "react";
 import { useTranslations } from "@/lib/i18n";
@@ -98,18 +99,17 @@ export default function Hero() {
           </a>
         </div>
       </div>
-      {/* The page's LCP element: eager, prioritised, and the only image with
-          intrinsic dimensions in the markup — its height is `auto`, so without
-          them the layout shifts once the file arrives. Every other image on the
-          site has its box fixed in CSS. */}
-      <img
+      {/* The page's LCP element: `priority` makes it eager and preloaded.
+          Intrinsic dimensions matter here because the height is `auto` — every
+          other image on the site has its box fixed in CSS. */}
+      <Image
         data-hero-image
         src="/images/hero-image-01.webp"
         alt={t.imageAlt}
         width={491}
         height={515}
-        fetchPriority="high"
-        decoding="async"
+        priority
+        sizes="(min-width: 1280px) 42vw, (min-width: 1024px) 50vw, 100vw"
         className="w-full lg:w-1/2 xl:w-5/12 h-auto max-h-[440px] object-contain rounded-[8px]"
       />
     </section>
