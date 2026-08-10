@@ -21,7 +21,26 @@ const companies = [
   "Topas Travel",
   "Crossian",
   "Money Forward",
+  "ANDPAD",
 ];
+
+function Marks({ ariaHidden = false }: { ariaHidden?: boolean }) {
+  return (
+    <div
+      aria-hidden={ariaHidden || undefined}
+      className="flex shrink-0 items-center gap-x-[28px] md:gap-x-[44px] pr-[28px] md:pr-[44px]"
+    >
+      {companies.map((name) => (
+        <span
+          key={name}
+          className="whitespace-nowrap text-[16px] md:text-[19px] font-semibold text-[var(--agency-heading)] opacity-60 transition-opacity hover:opacity-100"
+        >
+          {name}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 export default function TrustBar() {
   const t = useTranslations("trust");
@@ -40,13 +59,16 @@ export default function TrustBar() {
         { ...slideTo(), duration: 0.6, scrollTrigger: enterTrigger(el, "top 90%") },
       );
 
+      // The track fades in rather than sliding: it already has a CSS transform
+      // animation running, and a second one on the same axis would fight it.
       gsap.fromTo(
-        q("[data-trust-item]"),
-        slideFrom("right", 28),
+        q("[data-trust-track]"),
+        { opacity: 0, filter: "blur(6px)" },
         {
-          ...slideTo(),
-          duration: 0.6,
-          stagger: 0.05,
+          opacity: 1,
+          filter: "blur(0px)",
+          duration: 0.7,
+          ease: "power2.out",
           scrollTrigger: enterTrigger(el, "top 90%"),
         },
       );
@@ -57,7 +79,7 @@ export default function TrustBar() {
   return (
     <section
       ref={root}
-      className="flex flex-col items-center gap-[20px] md:gap-[28px] px-[20px] md:px-[120px] py-[32px] md:py-[48px] bg-[var(--agency-white)] border-y border-[var(--agency-border)]"
+      className="flex flex-col items-center gap-[20px] md:gap-[28px] py-[32px] md:py-[48px] bg-[var(--agency-white)] border-y border-[var(--agency-border)]"
     >
       <span
         data-trust-label
@@ -65,16 +87,16 @@ export default function TrustBar() {
       >
         {t.label}
       </span>
-      <div className="flex flex-wrap items-center justify-center gap-x-[28px] gap-y-[16px] md:gap-x-[44px]">
-        {companies.map((name) => (
-          <span
-            key={name}
-            data-trust-item
-            className="whitespace-nowrap text-[16px] md:text-[19px] font-semibold text-[var(--agency-heading)] opacity-60 transition-opacity hover:opacity-100"
-          >
-            {name}
-          </span>
-        ))}
+
+      {/* Full-bleed on purpose: the names should run off both edges rather than
+          stop inside the page gutter. */}
+      <div className="marquee w-full overflow-hidden">
+        <div data-trust-track className="marquee-track flex">
+          <Marks />
+          {/* Second copy makes the -50% loop seamless; hidden from the a11y
+              tree so the names are not announced twice. */}
+          <Marks ariaHidden />
+        </div>
       </div>
     </section>
   );

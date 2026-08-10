@@ -111,6 +111,42 @@ footer {
   overflow-x: clip;
 }
 
+/* Auto-running trust bar. The track holds the list twice and travels exactly
+   -50%, so the second copy lands where the first began and the seam is
+   invisible. CSS rather than JS: no rAF, no work on the main thread. */
+@keyframes marquee-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  width: max-content;
+  animation: marquee-scroll 34s linear infinite;
+}
+
+/* Hovering stops it so a name can actually be read. */
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+/* Fade the edges instead of letting names get chopped off at the boundary. */
+.marquee {
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    #000 6%,
+    #000 94%,
+    transparent
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
+}
+
 /* Circular reveal when toggling theme, centred on the toggle button. */
 ::view-transition-old(root) {
   animation: theme-fade-out 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
