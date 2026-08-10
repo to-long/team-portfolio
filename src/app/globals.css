@@ -1,14 +1,85 @@
 @import "tailwindcss";
 
 :root {
+  color-scheme: light;
+
   --agency-bg: #FFFFFF;
   --agency-blue: #4A6CF7;
-  --agency-blue-light: #f8f9ff;
+  --agency-blue-light: #F8F9FF;
   --agency-body: #637381;
   --agency-border: #E5E8F2;
   --agency-dark: #090E34;
   --agency-heading: #212B36;
   --agency-white: #FFFFFF;
+
+  /* Subtle section background (testimonials, contact) */
+  --agency-muted: #F9FAFB;
+
+  /* Form fields */
+  --agency-field: #F9FAFB;
+  --agency-field-focus: #FFFFFF;
+
+  /* Blue blocks (services, footer). `--agency-blue-deep` stays the flat
+     fallback colour that paints under the gradient. */
+  --agency-blue-deep: #4A6CF7;
+  --agency-blue-deep-fg: #FFFFFF;
+  --agency-blue-deep-muted: #D6DFFF;
+  --agency-blue-deep-line: #3B5BD9;
+
+  /* Two layers: a soft top-left sheen over a blue → indigo → violet sweep. */
+  --agency-blue-gradient:
+    radial-gradient(
+      ellipse 90% 70% at 12% -10%,
+      rgba(255, 255, 255, 0.18) 0%,
+      transparent 60%
+    ),
+    linear-gradient(150deg, #3D5BFA 0%, #4A6CF7 32%, #6C5CE7 68%, #8B5CF6 100%);
+}
+
+html.dark {
+  color-scheme: dark;
+
+  --agency-bg: #0B0B0D;
+  --agency-blue: #6E8BFF;
+  --agency-blue-light: #121722;
+  --agency-body: #A1A1AA;
+  --agency-border: #26262B;
+  --agency-dark: #05060F;
+  --agency-heading: #F4F4F5;
+  --agency-white: #131316;
+
+  --agency-muted: #0F0F12;
+
+  --agency-field: #17171B;
+  --agency-field-focus: #1D1D22;
+
+  --agency-blue-deep: #1B2550;
+  --agency-blue-deep-fg: #EEF2FF;
+  --agency-blue-deep-muted: #A9B6E8;
+  --agency-blue-deep-line: #2C3A6B;
+
+  --agency-blue-gradient:
+    radial-gradient(
+      ellipse 90% 70% at 12% -10%,
+      rgba(255, 255, 255, 0.08) 0%,
+      transparent 60%
+    ),
+    linear-gradient(150deg, #101637 0%, #1B2550 34%, #241B4A 70%, #2E1F55 100%);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Sticky header is 52px on mobile, 60px from md up — keep anchor targets clear of it. */
+section[id] {
+  scroll-margin-top: 52px;
+}
+
+@media (min-width: 768px) {
+  section[id] {
+    scroll-margin-top: 60px;
+  }
 }
 
 @layer base {
@@ -24,4 +95,40 @@
 body {
   background: var(--agency-bg);
   color: var(--agency-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Circular reveal when toggling theme, centred on the toggle button. */
+::view-transition-old(root) {
+  animation: theme-fade-out 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+::view-transition-new(root) {
+  animation: theme-fade-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes theme-fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes theme-fade-in {
+  from {
+    clip-path: circle(0% at var(--theme-x, 50%) var(--theme-y, 0%));
+  }
+  to {
+    clip-path: circle(150% at var(--theme-x, 50%) var(--theme-y, 0%));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

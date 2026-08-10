@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" role="img">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14532D"/><stop offset="1" stop-color="#16A34A"/></linearGradient>
+    <radialGradient id="s" cx="0.15" cy="0" r="0.9"><stop offset="0" stop-color="#fff" stop-opacity="0.20"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)"/>
+  <line x1="80" y1="300" x2="210" y2="340" stroke="#fff" stroke-width="2" opacity="0.28"/><line x1="210" y1="340" x2="340" y2="300" stroke="#fff" stroke-width="2" opacity="0.28"/><line x1="340" y1="300" x2="470" y2="340" stroke="#fff" stroke-width="2" opacity="0.28"/><line x1="470" y1="340" x2="600" y2="300" stroke="#fff" stroke-width="2" opacity="0.28"/><line x1="600" y1="300" x2="730" y2="340" stroke="#fff" stroke-width="2" opacity="0.28"/><ellipse cx="80" cy="300" rx="26" ry="38" fill="#fff" opacity="0.20" transform="rotate(-18 80 300)"/><ellipse cx="210" cy="340" rx="26" ry="38" fill="#fff" opacity="0.25" transform="rotate(-9 210 340)"/><ellipse cx="340" cy="300" rx="26" ry="38" fill="#fff" opacity="0.30" transform="rotate(0 340 300)"/><ellipse cx="470" cy="340" rx="26" ry="38" fill="#fff" opacity="0.35" transform="rotate(9 470 340)"/><ellipse cx="600" cy="300" rx="26" ry="38" fill="#fff" opacity="0.40" transform="rotate(18 600 300)"/><ellipse cx="730" cy="340" rx="26" ry="38" fill="#fff" opacity="0.45" transform="rotate(27 730 340)"/>
+  <rect width="800" height="500" fill="url(#s)"/>
+</svg>
