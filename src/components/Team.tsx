@@ -18,7 +18,7 @@ const team = [
   { image: "/images/team-ken.webp", name: "Ken Nguyen" },
   { image: "/images/team-steven.webp", name: "Steven Nguyen" },
   { image: "/images/team-truong.webp", name: "Tony Nguyen" },
-  { image: "/images/team-quanganh.webp", name: "Andy Nguyen" },
+  { image: "/images/team-andy.webp", name: "Andy Nguyen" },
   { image: "/images/team-thuy.webp", name: "May Le" },
 ];
 
