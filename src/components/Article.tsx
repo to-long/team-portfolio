@@ -84,21 +84,23 @@ export default function Article({ index }: { index: number }) {
             className="object-cover"
           />
         </div>
-        {/* CC BY and CC BY-SA oblige us to name the author and the licence.
-            Rendered for every post so the credit line is uniform, including
-            the CC0 images that do not strictly require it. */}
-        <figcaption className="text-[12px] text-[var(--agency-body)]">
-          {"Photo: "}
-          <a
-            href={meta.credit.source}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="underline hover:text-[var(--agency-blue)]"
-          >
-            {meta.credit.author}
-          </a>
-          {` · ${meta.credit.license} · Wikimedia Commons`}
-        </figcaption>
+        {/* Only for images that carry an attribution requirement. Posts whose
+            artwork we supplied render no caption at all — a leftover credit
+            would point at the wrong photographer. */}
+        {meta.credit ? (
+          <figcaption className="text-[12px] text-[var(--agency-body)]">
+            {"Photo: "}
+            <a
+              href={meta.credit.source}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline hover:text-[var(--agency-blue)]"
+            >
+              {meta.credit.author}
+            </a>
+            {` · ${meta.credit.license} · Wikimedia Commons`}
+          </figcaption>
+        ) : null}
       </figure>
 
       <div className="flex flex-col gap-[20px]">

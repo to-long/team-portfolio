@@ -15,7 +15,12 @@ export interface ImageCredit {
 export interface PostMeta {
   slug: string;
   image: string;
-  credit: ImageCredit;
+  /**
+   * Only set for images that carry an attribution requirement. Posts using
+   * artwork supplied by us have none — and rendering a stale Commons credit
+   * under a replaced image would misattribute it, which is worse than none.
+   */
+  credit?: ImageCredit;
 }
 
 const COMMONS = "https://commons.wikimedia.org/wiki/File:";
@@ -23,12 +28,7 @@ const COMMONS = "https://commons.wikimedia.org/wiki/File:";
 export const POSTS: PostMeta[] = [
   {
     slug: "big-tech-ai-capex",
-    image: "/images/blog-ai-capex.webp",
-    credit: {
-      author: "Rsparks3",
-      license: "CC0",
-      source: `${COMMONS}Data_center_roof.jpg`,
-    },
+    image: "/images/blog-ai-capex-v2.webp",
   },
   {
     slug: "custom-silicon-land-grab",
@@ -59,21 +59,11 @@ export const POSTS: PostMeta[] = [
   },
   {
     slug: "frontier-talent-war",
-    image: "/images/blog-ai-talent.webp",
-    credit: {
-      author: "Arunvrparavur",
-      license: "CC BY-SA 4.0",
-      source: `${COMMONS}Bridge_Global_developers%27_bay,_Apr_2019.jpg`,
-    },
+    image: "/images/blog-ai-talent-v2.webp",
   },
   {
     slug: "agents-testing-limits",
-    image: "/images/blog-ai-agents.webp",
-    credit: {
-      author: "Auledas",
-      license: "CC BY-SA 4.0",
-      source: `${COMMONS}UR16e_robot_arm.png`,
-    },
+    image: "/images/blog-ai-agents-v2.webp",
   },
 ];
 
