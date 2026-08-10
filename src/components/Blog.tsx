@@ -13,7 +13,6 @@ import {
   useGSAP,
 } from "@/lib/gsap";
 import { POSTS } from "@/lib/posts";
-import SplitHeading from "./animations/SplitHeading";
 
 export default function Blog() {
   const t = useTranslations("blog");
@@ -61,11 +60,9 @@ export default function Blog() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
+          {t.heading}
+        </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px] md:gap-[32px] w-full">
         {/* The whole card is the link, so the click target is not just the

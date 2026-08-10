@@ -10,7 +10,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 const fieldClass =
   "flex-1 rounded-[8px] border border-[var(--agency-border)] px-[16px] py-[14px] text-[15px] text-[var(--agency-heading)] placeholder:text-[var(--agency-body)] bg-[var(--agency-field)] focus:bg-[var(--agency-field-focus)] focus:border-[var(--agency-blue)] outline-none transition-colors";
@@ -74,11 +73,9 @@ export default function Contact() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
+          {t.heading}
+        </h2>
       </div>
       <div className="flex flex-col gap-[12px] md:gap-[20px] w-full max-w-[540px] md:max-w-none">
         <div className="flex flex-col md:flex-row gap-[12px] md:gap-[20px]">

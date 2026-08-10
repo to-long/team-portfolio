@@ -11,7 +11,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 const socialIcons: LucideIcon[] = [Facebook, Twitter, Youtube, Linkedin];
 
@@ -84,12 +83,9 @@ export default function About() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          start="top 82%"
-          className="text-[28px] md:text-[36px] font-bold leading-[1.3] text-[var(--agency-heading)]"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold leading-[1.3] text-[var(--agency-heading)]">
+          {t.heading}
+        </h2>
         <p
           data-left
           className="text-[15px] md:text-[16px] leading-[1.7] text-[var(--agency-body)]"

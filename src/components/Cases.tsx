@@ -10,7 +10,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 // Index-matched to `cases.items` in translations.ts.
 const caseImages = [
@@ -62,11 +61,9 @@ export default function Cases() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
+          {t.heading}
+        </h2>
         <p data-intro className="text-[15px] md:text-[16px] text-[var(--agency-body)] text-center">
           {t.desc}
         </p>

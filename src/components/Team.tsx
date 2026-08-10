@@ -11,7 +11,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 // Order matches `team.roles` in translations.ts — keep the two in sync.
 const team = [
@@ -75,11 +74,9 @@ export default function Team() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
+          {t.heading}
+        </h2>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[16px] md:gap-[32px] w-full">
         {team.map((m, i) => (

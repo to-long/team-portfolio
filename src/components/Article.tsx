@@ -13,7 +13,6 @@ import {
   useGSAP,
 } from "@/lib/gsap";
 import { POSTS } from "@/lib/posts";
-import SplitHeading from "./animations/SplitHeading";
 
 /**
  * Rendered by /blog/[slug]. Takes an index rather than a slug so the
@@ -68,13 +67,9 @@ export default function Article({ index }: { index: number }) {
         {t.backToList}
       </Link>
 
-      <SplitHeading
-        as="h1"
-        by="lines"
-        immediate
-        text={post.title}
-        className="text-[28px] md:text-[40px] font-bold leading-[1.25] text-[var(--agency-heading)]"
-      />
+      <h1 className="text-[28px] md:text-[40px] font-bold leading-[1.25] text-[var(--agency-heading)]">
+        {post.title}
+      </h1>
 
       <figure data-article-hero className="flex flex-col gap-[8px]">
         {/* LCP element for this page, so it is preloaded rather than lazy. */}

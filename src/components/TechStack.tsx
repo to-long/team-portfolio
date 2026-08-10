@@ -10,7 +10,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 // Grouped by layer so the cloud is scannable rather than one undifferentiated
 // pile of names.
@@ -67,11 +66,9 @@ export default function TechStack() {
         >
           {t.eyebrow}
         </span>
-        <SplitHeading
-          by="lines"
-          text={t.heading}
-          className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center"
-        />
+        <h2 className="text-[28px] md:text-[36px] font-bold text-[var(--agency-heading)] text-center">
+          {t.heading}
+        </h2>
       </div>
 
       <div className="flex flex-col gap-[24px] md:gap-[28px] w-full max-w-[820px]">

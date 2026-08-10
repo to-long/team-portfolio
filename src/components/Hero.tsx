@@ -12,7 +12,6 @@ import {
   slideTo,
   useGSAP,
 } from "@/lib/gsap";
-import SplitHeading from "./animations/SplitHeading";
 
 export default function Hero() {
   const t = useTranslations("hero");
@@ -68,13 +67,9 @@ export default function Hero() {
       className="flex flex-col lg:flex-row items-center gap-[48px] md:gap-[64px] px-[20px] md:px-[120px] py-[40px] md:py-[80px] bg-[var(--agency-white)]"
     >
       <div data-hero-text className="flex flex-col gap-[24px] lg:w-1/2 xl:w-7/12">
-        <SplitHeading
-          as="h1"
-          by="lines"
-          immediate
-          text={t.title}
-          className="text-[32px] md:text-[48px] font-bold leading-[1.2] text-[var(--agency-heading)]"
-        />
+        <h1 className="text-[32px] md:text-[48px] font-bold leading-[1.2] text-[var(--agency-heading)]">
+          {t.title}
+        </h1>
         <p
           data-hero-copy
           className="text-[15px] md:text-[16px] leading-[1.7] text-[var(--agency-body)]"

@@ -3,14 +3,12 @@
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { SplitText } from "gsap/SplitText";
 
-gsap.registerPlugin(useGSAP, ScrollTrigger, SplitText);
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// None of the 20 <img> tags carry intrinsic dimensions, and in dev the
-// stylesheet is injected by JS — so the first layout pass can be far shorter
-// than the final page. Triggers created against that measurement start too
-// early. One refresh after everything has loaded re-measures them all.
+// Lazy-loaded images and webfonts land after the first layout pass, so a
+// trigger measured against it can start too early. One refresh once
+// everything has loaded re-measures them all.
 if (typeof window !== "undefined") {
   if (document.readyState === "complete") {
     ScrollTrigger.refresh();
@@ -73,4 +71,4 @@ export const enterTrigger = (
   toggleActions: "play none none reset",
 });
 
-export { gsap, useGSAP, ScrollTrigger, SplitText };
+export { gsap, useGSAP, ScrollTrigger };
