@@ -50,7 +50,6 @@ const en = {
   services: {
     eyebrow: "WHAT WE DO",
     heading: "Our Services — Built for Your Success",
-    viewDetails: "View Details",
     items: [
       {
         title: "Website Development",
@@ -262,7 +261,6 @@ const ja: Dictionary = {
   services: {
     eyebrow: "事業内容",
     heading: "成果につながるサービスをご提供します",
-    viewDetails: "詳細を見る",
     items: [
       {
         title: "Web開発",

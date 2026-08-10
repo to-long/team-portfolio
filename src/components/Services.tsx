@@ -1,6 +1,5 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
 import { useTranslations } from "@/lib/i18n";
 import {
@@ -81,9 +80,6 @@ export default function Services() {
               <p className="text-[14px] leading-[1.7] text-[var(--agency-body)]">
                 {s.desc}
               </p>
-              <span className="flex items-center gap-[6px] text-[14px] font-medium text-[var(--agency-heading)]">
-                {t.viewDetails} <ArrowRight className="w-[16px] h-[16px]" />
-              </span>
             </div>
           </div>
         ))}
