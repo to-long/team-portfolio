@@ -32,9 +32,19 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 w-full bg-[var(--agency-white)] border-b border-[var(--agency-border)]">
       <div className="flex items-center justify-between gap-[16px] px-[20px] md:px-[40px] lg:px-[120px] h-[52px] md:h-[60px] max-w-[1200px] mx-auto">
-        <span className="shrink-0 whitespace-nowrap text-[18px] md:text-[20px] font-bold text-[var(--agency-heading)]">
-          Teamotion
-        </span>
+        {/* Same TM mark as the favicon, drawn in markup rather than fetched —
+            at this size an image request costs more than the element does. */}
+        <a href="/" className="flex shrink-0 items-center gap-[8px]">
+          <span
+            aria-hidden
+            className="flex h-[26px] w-[26px] shrink-0 items-center justify-center rounded-[7px] bg-[var(--agency-blue)] text-[11px] font-bold tracking-[-0.5px] text-white"
+          >
+            TM
+          </span>
+          <span className="whitespace-nowrap text-[18px] md:text-[20px] font-bold text-[var(--agency-heading)]">
+            Teamotion
+          </span>
+        </a>
 
         <nav className="hidden lg:flex items-center gap-[28px] h-full">
           {navLinks.map((l) => (

@@ -63,23 +63,23 @@ export default function ThemeToggle({ className = "" }: { className?: string }) 
       onClick={handleClick}
       aria-label={t.toggle}
       aria-pressed={isDark}
-      className={`relative flex shrink-0 cursor-pointer items-center rounded-full border border-[var(--agency-border)] bg-[var(--agency-white)] p-[4px] ${className}`}
+      className={`relative flex shrink-0 cursor-pointer items-center rounded-full border border-[var(--agency-border)] bg-[var(--agency-white)] p-[3px] ${className}`}
     >
       <span
         aria-hidden
-        className="absolute top-[4px] left-[4px] h-[26px] w-[26px] rounded-full bg-[var(--agency-heading)] transition-transform duration-300 ease-out"
-        style={{ transform: `translateX(${isDark ? 26 : 0}px)` }}
+        className="absolute top-[3px] left-[3px] h-[22px] w-[22px] rounded-full bg-[var(--agency-blue)] transition-transform duration-300 ease-out"
+        style={{ transform: `translateX(${isDark ? 22 : 0}px)` }}
       />
       <span
-        className={`relative z-10 flex h-[26px] w-[26px] items-center justify-center rounded-full transition-colors ${
-          isDark ? "text-[var(--agency-body)]" : "text-[var(--agency-white)]"
+        className={`relative z-10 flex h-[22px] w-[22px] items-center justify-center rounded-full transition-colors ${
+          isDark ? "text-[var(--agency-body)]" : "text-white"
         }`}
       >
         <Sun className="w-[14px] h-[14px]" />
       </span>
       <span
-        className={`relative z-10 flex h-[26px] w-[26px] items-center justify-center rounded-full transition-colors ${
-          isDark ? "text-[var(--agency-white)]" : "text-[var(--agency-body)]"
+        className={`relative z-10 flex h-[22px] w-[22px] items-center justify-center rounded-full transition-colors ${
+          isDark ? "text-white" : "text-[var(--agency-body)]"
         }`}
       >
         <Moon className="w-[14px] h-[14px]" />
